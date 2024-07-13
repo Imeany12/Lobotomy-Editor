@@ -2,30 +2,38 @@
 import { transcribe } from "./transcriber";
 import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
-import { CodeBlock } from "@/components/codeblock";
-import hljs from "highlight.js";
 import "highlight.js/styles/atom-one-dark-reasonable.css";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { atomOneDarkReasonable } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 export default function Page() {
   const [transformedText, setTransformedText] = useState<string>("");
+  const customStyle = {
+    borderRadius: "0.375rem" /* 6px */,
+  };
 
   function brainrot(event: React.ChangeEvent<HTMLTextAreaElement>) {
-    setTransformedText(event.target.value);
+    setTransformedText(transcribe(event.target.value));
   }
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center p-24">
-      <h1 className="text-4xl font-bold mb-4">Lobotomy Editor</h1>
-      <div className="grid grid-cols-2 gap-4 w-full min-h-[70vh]">
+    <div className="flex min-h-screen flex-col items-center justify-center p-16">
+      <h1 className="text-8xl font-bold mb-4 bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text">
+        Lobotomy Editor
+      </h1>
+      <div className="grid grid-cols-2 gap-8 w-full min-h-[70vh]">
         <Textarea
           placeholder="Please type your command here"
           onChange={brainrot}
+          className="text-md"
         />
-        <CodeBlock
-          language="javascript"
-          code={transformedText}
-          // className="border rounded-md"
-        />
+        <SyntaxHighlighter
+          style={atomOneDarkReasonable}
+          customStyle={customStyle}
+          showLineNumbers
+        >
+          {transformedText}
+        </SyntaxHighlighter>
       </div>
     </div>
   );
