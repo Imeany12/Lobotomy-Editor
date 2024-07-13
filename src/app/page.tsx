@@ -10,7 +10,7 @@ export default function Page() {
   const [transformedText, setTransformedText] = useState<string>("");
 
   function brainrot(event: React.ChangeEvent<HTMLTextAreaElement>) {
-    setTransformedText(event.target.value);
+    setTransformedText(transcribe(event.target.value));
   }
 
   return (
