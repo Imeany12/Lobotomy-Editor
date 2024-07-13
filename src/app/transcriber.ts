@@ -4,7 +4,8 @@ import './strings'
 
 export function transcribe(code: string) {
     return code
-        // .replace_fr(";", '!')
+        .replace_fr("lookmaxing", "function")
+        .replace_fr("galvanize", "while")
         .replace_fr("rn", ';')
         .replace_fr("be", '=')
         .replace_fr("rizz", 'let')
@@ -13,6 +14,7 @@ export function transcribe(code: string) {
         .replace_fr("fake", 'null')
         .replace_fr("impostor", 'else')
         .replace_fr("nah", '!=')
+        .replace_fr("legit", "===")
         .replace_fr("fr", '==')
         .replace_fr("btw", '&&')
         .replace_fr("carenot", '|')
@@ -46,7 +48,6 @@ export function transcribe(code: string) {
         .replace_fr("yeet", "return")
         .replace_fr("gyatt", "get")
         .replace_fr("sigma", '"use strict"')
-        .replace_fr("lookmaxing", "function")
         .replace(/: number/g, '')
         .replace(/: string/g, '')
         .replace(/: object/g, '')

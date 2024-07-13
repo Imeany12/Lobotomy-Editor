@@ -7,8 +7,9 @@ interface String {
 
 
 String.prototype.replace_fr = function (target: string, replacement: string): string {
-    // const placeholder = `x3 nuZzlEs! pounces on you UwU u sO warm(Ooo)`;
-    const placeholder = "NUZZLES"
+    const placeholder = `d33zNutz`;
+    // const placeholder = " when jimmy first told me about deeznut"
+
 
     let specialchar = ['+', '*', '.', "|"];
     let reps = replacement.split('');
@@ -27,7 +28,7 @@ String.prototype.replace_fr = function (target: string, replacement: string): st
         txt = txt.replace(p2, target + placeholder);       
     }
     else{
-        let p2 = new RegExp(`\\b${reps.join('')}\\b(?=(?:(?:[^"]*"){2})*[^"]*$)`, 'g');
+        let p2 = new RegExp(`${reps.join('')}\\b(?=(?:(?:[^"]*"){2})*[^"]*$)`, 'g');
         specialchar = ['+', '*', '.', "|", "!", "=", "\\", "-", "/"];
         if (specialchar.includes(replacement.charAt(0))) {
             p2 = new RegExp(`${reps.join('')}`, 'g');
@@ -38,7 +39,7 @@ String.prototype.replace_fr = function (target: string, replacement: string): st
         }
     }
 
-    const pattern = new RegExp(`\\b${target}\\b(?=(?:(?:[^"]*"){2})*[^"]*$)(?![${placeholder}])`, 'g');
+    const pattern = new RegExp(`\\b${target}\\b(?=(?:(?:[^"]*"){2})*[^"]*$)`, 'g');
 
     txt = txt.replace(pattern, replacement);
     return txt.replace(placeholder, "");
