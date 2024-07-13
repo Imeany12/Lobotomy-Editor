@@ -5,7 +5,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Robotomy Editor",
+  title: "Lobotomy Editor",
   description: "An Editor for brainrot",
 };
 
