@@ -7,12 +7,10 @@ interface String {
 
 
 String.prototype.replace_fr = function (target: string, replacement: string): string {
-    const pattern = new RegExp(`\\b${target}\\b(?=(?:(?:[^"]*"){2})*[^"]*$)`, 'g');
+    // const placeholder = `x3 nuZzlEs! pounces on you UwU u sO warm(Ooo)`;
+    const placeholder = "NUZZLES"
 
-    let txt = this.replace(pattern, replacement + "SKIBIDIPLACEHOLDER");
-    // backward
-
-    const specialchar = ['+', '*', '!', '.', "|"];
+    let specialchar = ['+', '*', '.', "|"];
     let reps = replacement.split('');
     reps.forEach((element) => {
         if (specialchar.includes(element)) {
@@ -22,22 +20,28 @@ String.prototype.replace_fr = function (target: string, replacement: string): st
     });
 
 
+    let txt = this;
     if (replacement.length == 1) {
-        const p2 = new RegExp(`(?<![${reps.join('')}])${reps.join('')}(?![${reps.join('')}])`, 'g');
-        txt = txt.replace(p2, target);   
+        const ban = "\\" + specialchar.join("\\") + "=/";
+        const p2 = new RegExp(`(?<![!${ban}])${reps.join('')}(?![${ban}])`, 'g');
+        txt = txt.replace(p2, target + placeholder);       
     }
     else{
         let p2 = new RegExp(`\\b${reps.join('')}\\b(?=(?:(?:[^"]*"){2})*[^"]*$)`, 'g');
+        specialchar = ['+', '*', '.', "|", "!", "=", "\\", "-", "/"];
         if (specialchar.includes(replacement.charAt(0))) {
-            p2 = new RegExp(`(?<![${reps.join('')}])${reps.join('')}`, 'g');
+            p2 = new RegExp(`${reps.join('')}`, 'g');
         }
         
         if (txt.match(p2)?.join()   ) {
-            console.log(target)
-            txt = txt.replace(p2, target);
+            txt = txt.replace(p2, target + placeholder);
         }
     }
-    return txt.replace("SKIBIDIPLACEHOLDER", "");
+
+    const pattern = new RegExp(`\\b${target}\\b(?=(?:(?:[^"]*"){2})*[^"]*$)(?![${placeholder}])`, 'g');
+
+    txt = txt.replace(pattern, replacement);
+    return txt.replace(placeholder, "");
 
 
 }
