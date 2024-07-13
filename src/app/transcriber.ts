@@ -1,12 +1,13 @@
 import './strings'
 
+
+
 export function transcribe(code: string) {
     return code
-        .replace_fr(";", '!')
+        // .replace_fr(";", '!')
         .replace_fr("rn", ';')
         .replace_fr("be", '=')
-        .replace_fr("lit", 'let')
-        .replace_fr("mf", 'const')
+        .replace_fr("rizz", 'let')
         .replace_fr("waffle", 'console.log')
         .replace_fr("sus", 'if')
         .replace_fr("fake", 'null')
@@ -40,7 +41,10 @@ export function transcribe(code: string) {
         .replace_fr("betimes", "*=")
         .replace_fr("bedivided", "/=")
         .replace_fr("then", "->")
-        .replace_fr("ornot", "|")
+        .replace_fr("skibidi", "const")
+        .replace_fr("yeet", "return")
+        .replace_fr("gyatt", "get")
+        .replace_fr("sigma", '"use strict"')
         .replace(/: number/g, '')
         .replace(/: string/g, '')
         .replace(/: object/g, '')
