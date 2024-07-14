@@ -43,7 +43,9 @@ String.prototype.replace_fr = function (target: string, replacement: string): st
     const pattern = new RegExp(`\\b${target}\\b(?=(?:(?:[^"]*"){2})*[^"]*$)`, 'g');
 
     txt = txt.replace(pattern, replacement);
-    return txt.replace(placeholder, "");
+
+    const placeholderpattern = new RegExp(placeholder, 'g');
+    return txt.replace(placeholderpattern, "");
 
 
 }
