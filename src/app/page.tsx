@@ -10,13 +10,14 @@ import customStyle from "../constant/syntax-style";
 
 
 
-let rotten = {"skibidi": 0,
-"lookmaxing": 0,  
-"galvanize": 0,
-"rizz": 0,
-"sus":0
-}
 
+let rotten: { [key: string]: number } = {
+  "skibidi": 0,
+  "lookmaxing": 0,
+  "galvanize": 0,
+  "rizz": 0,
+  "sus": 0
+};
 
 
 export default function Page() {
