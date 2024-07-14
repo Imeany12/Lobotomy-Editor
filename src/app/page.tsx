@@ -23,7 +23,7 @@ export default function Page() {
   );
   setInterval(() => {
     setSussyRNG(Math.floor(Math.random() * 10));
-  }, 1000);
+  }, 10000);
 
   function brainrot(event: React.ChangeEvent<HTMLTextAreaElement>) {
     let rotten_string = transcribe(event.target.value);
