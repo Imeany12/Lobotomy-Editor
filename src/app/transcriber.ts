@@ -1,21 +1,25 @@
 import './strings'
 
+
+
 export function transcribe(code: string) {
     return code
-        .replace_fr(";", '!')
+        .replace_fr("lookmaxing", "function")
+        .replace_fr("galvanize", "while")
         .replace_fr("rn", ';')
         .replace_fr("be", '=')
-        .replace_fr("lit", 'let')
-        .replace_fr("mf", 'const')
+        .replace_fr("rizz", 'let')
         .replace_fr("waffle", 'console.log')
         .replace_fr("sus", 'if')
         .replace_fr("fake", 'null')
         .replace_fr("impostor", 'else')
         .replace_fr("nah", '!=')
+        .replace_fr("legit", "===")
         .replace_fr("fr", '==')
         .replace_fr("btw", '&&')
         .replace_fr("carenot", '|')
         .replace_fr("bruh", 'fn')
+        .replace_fr("nerd", 'Math')
         .replace_fr("nerd", 'math')
         .replace_fr("yall", 'for')
         .replace_fr("smol", '<')
@@ -40,7 +44,10 @@ export function transcribe(code: string) {
         .replace_fr("betimes", "*=")
         .replace_fr("bedivided", "/=")
         .replace_fr("then", "->")
-        .replace_fr("ornot", "|")
+        .replace_fr("skibidi", "const")
+        .replace_fr("yeet", "return")
+        .replace_fr("gyatt", "get")
+        .replace_fr("sigma", '"use strict"')
         .replace(/: number/g, '')
         .replace(/: string/g, '')
         .replace(/: object/g, '')
