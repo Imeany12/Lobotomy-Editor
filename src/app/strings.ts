@@ -1,15 +1,15 @@
 
+
+
 interface String {
     replace_fr(s: string, replacement: string): string;
 }
 
 
 
-
 String.prototype.replace_fr = function (target: string, replacement: string): string {
     const placeholder = `d33zNutz`;
     // const placeholder = " when jimmy first told me about deeznut"
-
 
     let specialchar = ['+', '*', '.', "|"];
     let reps = replacement.split('');
@@ -36,6 +36,7 @@ String.prototype.replace_fr = function (target: string, replacement: string): st
         
         if (txt.match(p2)?.join()   ) {
             txt = txt.replace(p2, target + placeholder);
+
         }
     }
 
