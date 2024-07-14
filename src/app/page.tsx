@@ -23,7 +23,7 @@ export default function Page() {
   );
   setInterval(() => {
     setSussyRNG(Math.floor(Math.random() * 10));
-  }, 10000);
+  }, 1000);
 
   function brainrot(event: React.ChangeEvent<HTMLTextAreaElement>) {
     let rotten_string = transcribe(event.target.value);
@@ -43,13 +43,14 @@ export default function Page() {
         <Textarea
           placeholder="Please type your command here"
           onChange={brainrot}
+          key="textarea"
           className={`text-md  ${
             rotten.galvanize >= 3
-              ? "bg-[url(https://media1.tenor.com/m/u_U_V-3kjyMAAAAd/little-john-galvanized-square-steel.gif)] bg-cover"
+              ? "bg-[url(https://media1.tenor.com/m/u_U_V-3kjyMAAAAd/little-john-galvanized-square-steel.gif)] bg-cover transition-all duration-500"
               : ""
           } ${
             rotten.galvanize < 3 && sussyRNG > 5
-              ? "bg-[url(https://media1.tenor.com/m/WhXYjpREz1kAAAAd/skibidi-toilet-skibidi.gif)] bg-cover"
+              ? "bg-[url(https://media1.tenor.com/m/WhXYjpREz1kAAAAd/skibidi-toilet-skibidi.gif)] bg-cover transition-all duration-500"
               : ""
           } `}
         />
