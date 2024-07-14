@@ -18,13 +18,6 @@ let rotten = {"skibidi": 0,
 
 
 
-let rotten = {"skibidi": 0,
-"lookmaxing": 0,  
-"galvanize": 0,
-"rizz": 0,
-"sus":0
-}
-
 export default function Page() {
   const [transformedText, setTransformedText] = useState<string>("");
   const customStyle = {
