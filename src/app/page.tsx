@@ -5,12 +5,10 @@ import { useState } from "react";
 import "highlight.js/styles/atom-one-dark-reasonable.css";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { atomOneDarkReasonable } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import customStyle from "../constant/syntax-style";
 
 export default function Page() {
   const [transformedText, setTransformedText] = useState<string>("");
-  const customStyle = {
-    borderRadius: "0.375rem" /* 6px */,
-  };
 
   function brainrot(event: React.ChangeEvent<HTMLTextAreaElement>) {
     setTransformedText(transcribe(event.target.value));
